@@ -14,7 +14,7 @@ amqp.connect('amqp:localhost', function (err, conn) {
             process.exit(1);
         }
 
-        var q = 'hello';
+        var q = 'task_queue';
         var msg = process.argv.slice(2).join(' ') || 'hello world';
 
         ch.assertQueue(q, {
