@@ -15,12 +15,14 @@ amqp.connect('amqp:localhost', function (err, conn) {
         }
 
         var q = 'hello';
-        var msg = 'hello world';
+        var msg = process.argv.slice(2).join(' ') || 'hello world';
 
         ch.assertQueue(q, {
             durable: true
         }); //durable: true - queue survices broker restarts
-        ch.sendToQueue(q, new Buffer(msg));
+        ch.sendToQueue(q, new Buffer(msg), {
+            persistant: true
+        });
         console.log(" [x] Send %s", msg);
 
     });
