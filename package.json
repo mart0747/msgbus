@@ -1,0 +1,15 @@
+{
+  "name": "msgbus",
+  "version": "1.0.0",
+  "description": "msgbus learning",
+  "main": "index.js",
+  "dependencies": {
+    "amqplib": "^0.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "author": "jbm",
+  "license": "ISC"
+}
